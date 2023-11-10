@@ -1,0 +1,7 @@
+div #intro {
+    display: flex;
+} 
+
+div .intro-flex-element {
+    flex: 1;
+}

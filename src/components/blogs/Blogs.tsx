@@ -10,7 +10,6 @@ export default function Blogs () {
     return (
         <div>
             {blogs.map(blog => (
-
                 <div key={blog.url}>
                     <a href={`blog/${blog.url}`}><h2>{blog.name}</h2></a>
                 </div>
