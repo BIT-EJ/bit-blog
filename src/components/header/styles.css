@@ -1,8 +1,144 @@
-ul {
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  header {
+    background-color: #ffffff;
+    box-shadow: 0px 3px 10px #4f4f4f;
+  }
+  
+  .navbar {
     display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+    position: relative;
+  }
+  
+  .menuButton {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #0C4E9E;
+    cursor: pointer;
+    position: absolute; 
+    border-radius: 5px;
+    padding: 10px 5px;
+    top: 1rem;
+    right: 1rem;
+    align-items: center;
+  }
+  
+  .menuButton:hover {
+    background-color: #8dc0ff;
+    transition: .5s;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+  }
+  
+  .navlist {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navlist ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
-}
-
-li {
-    flex: 1;
-}
+  }
+  
+  .navlist ul li {
+    margin: 0 15px;
+  }
+  
+  .navlist ul li a{
+    color: #0C4E9E;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .navlist li a:hover{
+    background-color: #8dc0ff;
+    transition: .5s;
+  }
+  
+  .social svg {
+      text-decoration: none;
+      font-size: 30px;
+      align-items: center;
+      list-style-type: none;
+      border-radius: 5px;
+      color: #0C4E9E;
+      flex-direction: column;
+  }
+  
+  .social svg:hover {
+    color: #8dc0ff;
+    transition: .5s;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1.5rem;
+    }
+  
+    .menuButton {
+      display: block;
+    }
+  
+    .navlist, .social {
+      display: none;
+    }
+  
+    .navlist.open,
+    .social.open {
+      display: flex;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 5px;
+      flex-direction: column;
+      max-height: calc(100vh - 60px);
+      overflow-y: auto;
+      z-index: 1;
+      transition: .5s;
+    }
+  
+    .navlist.open ul{
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .navlist.open ul li{
+      margin: 10px 0;
+    }
+  
+    .navlist.open li:hover .navlist.open{
+      display: flex;
+    }
+  
+    .social.open {
+      margin-top: 10px;
+    }
+  
+    .navlist.open, .social.open{
+      position: sticky;
+      margin-top: 50px;
+    }
+  
+    .social.open button {
+      margin-top: 10px;
+    }
+  }
